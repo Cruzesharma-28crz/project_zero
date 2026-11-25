@@ -81,7 +81,8 @@ def main():
                     rx=stick.get_axis(2) if stick.get_numaxes()>2 else 0.0
                     ry=stick.get_axis(3) if stick.get_numaxes()>3 else 0.0
                     if abs(rx)>.22 or abs(ry)>.22: aim_x,aim_y=rx,ry
-                    if stick.get_numaxes()>4 and stick.get_axis(4)<-.45: firing=True
+                    if stick.get_numaxes()>5 and stick.get_axis(5)>-.5: firing=True
+                    elif stick.get_numaxes()>4 and stick.get_axis(4)>.55: firing=True
                     firing=firing or stick.get_button(0)
                 except pygame.error: pass
             player.update(dt,(move_x,move_y)); player.x=max(35,min(WORLD_COLS*64-35,player.x)); player.y=max(35,min(WORLD_ROWS*64-35,player.y)); camera.follow(player,dt)
@@ -91,7 +92,7 @@ def main():
                 sx=mouse[0]*INTERNAL_WIDTH/max(1,ww); sy=mouse[1]*INTERNAL_HEIGHT/max(1,wh)
                 dx,dy=sx-center[0],sy-center[1]
                 # Inverse of the isometric projection, in world-space units.
-                aim_x=2.0*dx+2.0*dy; aim_y=2.0*dy-2.0*dx
+                aim_x=dx+2.0*dy; aim_y=2.0*dy-dx
             if abs(aim_x)+abs(aim_y)>.001: player.angle=math.atan2(aim_y,aim_x)
             if firing and player.cooldown<=0:
                 p=bullets.acquire()
