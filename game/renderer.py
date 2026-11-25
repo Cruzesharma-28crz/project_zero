@@ -50,6 +50,8 @@ class Renderer:
             self.canvas.blit(a,a.get_rect(center=(INTERNAL_WIDTH//2,INTERNAL_HEIGHT//2-10)))
             self.canvas.blit(b,b.get_rect(center=(INTERNAL_WIDTH//2,INTERNAL_HEIGHT//2+22)))
     def present(self,window):
+        expected=(max(1,int(INTERNAL_WIDTH*self.settings.render_scale)),max(1,int(INTERNAL_HEIGHT*self.settings.render_scale)))
+        if self.low.get_size()!=expected: self.low=pygame.Surface(expected).convert()
         w,h=window.get_size(); lw,lh=self.low.get_size()
         pygame.transform.scale(self.canvas,(lw,lh),self.low)
         window.fill((0,0,0))
