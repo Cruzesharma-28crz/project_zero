@@ -84,7 +84,7 @@ def main():
                     if stick.get_numaxes()>4 and stick.get_axis(4)<-.45: firing=True
                     firing=firing or stick.get_button(0)
                 except pygame.error: pass
-            player.update(dt,(move_x,move_y)); camera.follow(player,dt)
+            player.update(dt,(move_x,move_y)); player.x=max(35,min(WORLD_COLS*64-35,player.x)); player.y=max(35,min(WORLD_ROWS*64-35,player.y)); camera.follow(player,dt)
             center=(INTERNAL_WIDTH//2,INTERNAL_HEIGHT//2)
             if aim_x==0.0 and aim_y==0.0:
                 mouse=pygame.mouse.get_pos(); ww,wh=window.get_size()
@@ -108,8 +108,8 @@ def main():
             spawn_timer-=dt
             if spawn_left>0 and spawn_timer<=0:
                 angle=random.random()*math.tau; dist=random.randint(330,470)
-                ex=max(35,min(WORLD_COLS*32-35,player.x+math.cos(angle)*dist))
-                ey=max(35,min(WORLD_ROWS*32-35,player.y+math.sin(angle)*dist))
+                ex=max(35,min(WORLD_COLS*64-35,player.x+math.cos(angle)*dist))
+                ey=max(35,min(WORLD_ROWS*64-35,player.y+math.sin(angle)*dist))
                 enemies.append(Drone(ex,ey)); spawn_left-=1; spawn_timer=.55
             for enemy in enemies:
                 # Distant AI is intentionally updated less often to save CPU.
