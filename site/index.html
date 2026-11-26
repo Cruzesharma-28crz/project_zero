@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="PROJECT ZERO: Combat Simulation. A lightweight isometric arcade shooter.">
+  <title>PROJECT ZERO | Combat Simulation</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080b12;--panel:#101722;--line:#202d3c;--text:#edf5ff;--muted:#9aaabd;--cyan:#67e8f9;--blue:#4f8cff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#17304b 0,transparent 55%),var(--bg);color:var(--text);font:16px/1.6 Inter,Segoe UI,Arial,sans-serif}
+    a{color:inherit}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}.brand{font-weight:900;letter-spacing:.16em;font-size:14px}.brand span{color:var(--cyan)}.nav small{color:var(--muted);letter-spacing:.12em}
+    .hero{min-height:590px;display:grid;align-items:center;text-align:center;padding:90px 0 80px;position:relative}.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase}.hero h1{font-size:clamp(48px,10vw,104px);line-height:.98;letter-spacing:-.07em;margin:18px 0 12px}.hero h1 span{color:var(--cyan);text-shadow:0 0 38px #67e8f955}.sub{font-size:clamp(16px,2vw,20px);color:#bdcadd;max-width:620px;margin:0 auto 30px}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 23px;border-radius:8px;text-decoration:none;font-weight:800;border:1px solid var(--line);transition:.2s}.btn.primary{background:linear-gradient(135deg,var(--cyan),#5b9bff);color:#06101b;border:0;box-shadow:0 10px 35px #4f8cff30}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.btn.disabled{opacity:.55;cursor:not-allowed}.note{color:var(--muted);font-size:12px;margin-top:14px}
+    .visual{height:180px;max-width:720px;margin:55px auto 0;border:1px solid #6be7ff33;border-radius:14px;background:linear-gradient(135deg,#0c1c2b,#101522 55%,#10263a);position:relative;overflow:hidden;box-shadow:0 25px 80px #0008}.visual:before,.visual:after{content:"";position:absolute;inset:-80%;background:repeating-linear-gradient(0deg,transparent 0 35px,#67e8f91a 36px 37px),repeating-linear-gradient(90deg,transparent 0 35px,#67e8f91a 36px 37px);transform:perspective(240px) rotateX(58deg) scale(1.2);transform-origin:center bottom}.visual:after{inset:0;background:radial-gradient(circle at 50% 48%,#67e8f944,transparent 22%);transform:none}.core{position:absolute;left:50%;top:50%;width:68px;height:68px;transform:translate(-50%,-50%) rotate(45deg);border:2px solid var(--cyan);box-shadow:0 0 30px #67e8f988,inset 0 0 25px #67e8f944;background:#67e8f911}.core:after{content:"";position:absolute;inset:15px;border:1px solid #fff9}
+    section{padding:66px 0}.section-title{font-size:28px;letter-spacing:-.04em;margin:0 0 8px}.section-lead{color:var(--muted);margin:0 0 26px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(145deg,#121c29,#0d131d);border:1px solid var(--line);padding:22px;border-radius:12px}.card .icon{font-size:22px;color:var(--cyan)}.card h3{margin:8px 0 5px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px}.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.spec{padding:15px 18px;background:#0e1621;border:1px solid var(--line);border-radius:9px}.spec b{display:block;font-size:13px}.spec span{color:var(--muted);font-size:13px}.footer{border-top:1px solid #ffffff12;padding:28px 0;color:var(--muted);font-size:13px}.footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:700px){.grid{grid-template-columns:1fr}.specs{grid-template-columns:1fr}.hero{min-height:520px;padding-top:70px}.visual{height:140px;margin-top:42px}.nav small{display:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <div class="brand">PROJECT<span>ZERO</span></div>
+    <small>COMBAT SIMULATION</small>
+  </header>
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">Independent game project</div>
+        <h1>PROJECT<br><span>ZERO</span></h1>
+        <p class="sub">Enter the combat simulation. Fight through enemy waves in a fast, isometric arcade shooter built with low-end PCs in mind.</p>
+        <div class="actions">
+          <a class="btn primary" id="download" href="https://github.com/Cruzesharma-28crz/project_zero/releases/latest/download/PROJECT_ZERO.exe">↓ &nbsp; Download for Windows</a>
+          <a class="btn" href="https://github.com/Cruzesharma-28crz/project_zero" target="_blank" rel="noreferrer">View source ↗</a>
+        </div>
+        <div class="note" id="download-note">Windows 10/11 · 64-bit build · Download availability depends on the latest release</div>
+        <div class="visual" aria-label="Abstract neon isometric simulation grid"><div class="core"></div></div>
+      </div>
+    </section>
+    <section class="wrap">
+      <h2 class="section-title">Enter the arena</h2>
+      <p class="section-lead">A focused arcade experience. Easy to jump into, challenging to master.</p>
+      <div class="grid">
+        <article class="card"><div class="icon">◈</div><h3>Isometric combat</h3><p>Navigate the arena, aim freely and take on waves of security drones.</p></article>
+        <article class="card"><div class="icon">⌁</div><h3>Built for older PCs</h3><p>Performance-minded rendering, cached arena visuals and adjustable graphics settings.</p></article>
+        <article class="card"><div class="icon">⌖</div><h3>Keyboard or controller</h3><p>Play with keyboard and mouse, or connect a compatible gamepad.</p></article>
+      </div>
+    </section>
+    <section class="wrap">
+      <h2 class="section-title">System requirements</h2>
+      <p class="section-lead">Current targets for the prototype. Actual performance varies by system.</p>
+      <div class="specs">
+        <div class="spec"><b>Operating system</b><span>Windows 10 or newer</span></div>
+        <div class="spec"><b>Memory</b><span>4 GB RAM target</span></div>
+        <div class="spec"><b>Processor</b><span>Intel Core i3 5th gen or equivalent target</span></div>
+        <div class="spec"><b>Graphics</b><span>Integrated graphics supported as a design target</span></div>
+      </div>
+    </section>
+    <section class="wrap">
+      <h2 class="section-title">Controls</h2>
+      <div class="specs">
+        <div class="spec"><b>Move</b><span>WASD / Arrow keys</span></div>
+        <div class="spec"><b>Aim</b><span>Mouse</span></div>
+        <div class="spec"><b>Fire</b><span>Left click / Space</span></div>
+        <div class="spec"><b>Pulse</b><span>E</span></div>
+        <div class="spec"><b>Pause</b><span>Escape</span></div>
+        <div class="spec"><b>Performance overlay</b><span>F3</span></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>© <span id="year"></span> PROJECT ZERO</span><span>Built independently · Early prototype</span></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
